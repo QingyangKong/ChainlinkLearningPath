@@ -86,15 +86,16 @@ Chainlink Any API 可以让你的智能合约通过 Chainlink 去中心化预言
 - [Chainlink Market](https://market.link/overview)：在此页面查找不同链上的数据提供商，通过这些节点让智能合约获得诸如股票，天气，经济，体育等等领域的数据。
 
 ## 接下来做什么？
-尝试在应用中使用 Chainlink 服务，扩展你的 dApp 的边界。
+- 尝试在应用中使用 Chainlink 服务，扩展你的 dApp 的边界。
 
-参与 Chainlink 生态中的活动，获得更多资源。比如 Chainlink 黑客松，Chainlink 每年会有举办两届黑客松：4 月开始的[春季黑客松](https://chainlinkspring2022.devpost.com/)和 10 月开始的[秋季黑客松](https://chain.link/hackathon)。
+- 参与 Chainlink 生态中的活动，获得更多资源。比如 Chainlink 黑客松，Chainlink 每年会有举办两届黑客松：4 月开始的[春季黑客松](https://chainlinkspring2022.devpost.com/)和 10 月开始的[秋季黑客松](https://chain.link/hackathon)。
 
-申请 Chainlink Grant。为了鼓励生态发展，给行业做贡献，Chainlink 官方会对有创新性和社会影响力的项目提供 Grant。在[这里](https://chain.link/community/grants)查看 Chainlink Grant 具体信息以及往期项目介绍。
+- 申请 Chainlink Grant。为了鼓励生态发展，给行业做贡献，Chainlink 官方会对有创新性和社会影响力的项目提供 Grant。在[这里](https://chain.link/community/grants)查看 Chainlink Grant 具体信息以及往期项目介绍。
 
-申请 Chainlink 孵化器 Startup With Chainlink。Chainlink 官方会帮助优秀的早期项目方提供包括项目指导，资源对接的服务。在[这里](https://chainlinklabs.com/startup)查看 Startup With Chainlink 的更多信息。
+- 申请 Chainlink 孵化器 Startup With Chainlink。Chainlink 官方会帮助优秀的早期项目方提供包括项目指导，资源对接的服务。在[这里](https://chainlinklabs.com/startup)查看 Startup With Chainlink 的更多信息。
 
-成为 Chainlink Contributor。如果想要给 Chainlink 共享代码，请查看 [contributor 规则](https://github.com/smartcontractkit/chainlink/blob/develop/docs/CONTRIBUTING.md)。如果想让团队增加新的特性，或者是提交 bug，请在官方 GitHub 的 [Issue](https://github.com/smartcontractkit/chainlink/issues) 中提交。
+- 成为 Chainlink Contributor。如果想要给 Chainlink 共享代码，请查看 [contributor 规则](https://github.com/smartcontractkit/chainlink/blob/develop/docs/CONTRIBUTING.md)。如果想让团队增加新的特性，或者是提交 bug，请在官方 GitHub 的 [Issue](https://github.com/smartcontractkit/chainlink/issues) 中提交。
+- 赏金猎人。如果发现了任何的 vulnerability 或者 bug，欢迎提交给团队，获得赏金（bounty），请在[赏金计划](https://hackerone.com/chainlink?type=team)中查看更多的内容。
 
 ## 社区支持
 Chainlink 中国开发者社区会持续性输出 Chainlink 最新信息，并且不定期举办一些分享来学习优秀案例。如果在使用 Chainlink 的时候遇到了任何的问题，可以和熟悉该技术的开发者和社区人员一起交流。
