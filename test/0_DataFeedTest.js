@@ -102,7 +102,7 @@ describe("单元测试：Chainlink Data feed", async function() {
     })
 
     it("单元测试 7: LINK aggregator 返回正确结果", async () => {
-        const { dataFeed, mockV3AggregatorEth } = await loadFixture(
+        const { dataFeed, mockV3AggregatorLink } = await loadFixture(
             deployDataFeedFixture
         );
         const dataFeedLatestPrice = await dataFeed.getLinkLatestPrice();
