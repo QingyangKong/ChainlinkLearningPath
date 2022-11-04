@@ -25,8 +25,11 @@ contract DataFeedTask {
 
      /**
      * 步骤 1 - 在构造这里初始化 3 个 Aggregator
-     * 查看 aggregator 的地址 https://docs.chain.link/docs/ethereum-addresses/#Goerli%20Testnet 
-     * （使用 goerli 网络，Rinkeby 和 Kovan 已经 deprecated）
+     * 
+     * 注意：
+     * 通过 Remix 部署在非本地环境中时
+     * 查看 aggregator 的地址 https://docs.chain.link/docs/ethereum-addresses/#Goerli%20Testnet，获得 Aggregator 合约地址
+     * 本地环境中相关参数已经在测试脚本中配置
      *  */
     constructor(
         address _linkPriceFeed,

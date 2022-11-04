@@ -44,7 +44,7 @@ describe("单元测试：Chainlink VRF", async ()=> {
         return { VRFConsumer, VRFCoordinator };
     }
 
-    it("单元测试 7: VRF request sent successfully", async function() {
+    it("单元测试 7: VRF 请求成功发送", async function() {
         const { VRFConsumer, VRFCoordinator } = await loadFixture(deployVRFConsumerFixture);
         await expect(VRFConsumer.requestRandomWords()).to.emit(
             VRFCoordinator,
@@ -53,7 +53,7 @@ describe("单元测试：Chainlink VRF", async ()=> {
     });
 
 
-    it("单元测试 8: Random number received successfully", async function() {
+    it("单元测试 8: 成功接受到随机数", async function() {
         const { VRFConsumer, VRFCoordinator } = await loadFixture(deployVRFConsumerFixture);
         await VRFConsumer.requestRandomWords();
         const requestId = await VRFConsumer.s_requestId();
@@ -79,7 +79,7 @@ describe("单元测试：Chainlink VRF", async ()=> {
         assert(rand4.gt(ethers.constants.Zero), "5th random number is not greater than 0");
     });
 
-    it("单元测试 9: random words are unique", async function() {
+    it("单元测试 9: 成功得到 5 个不重复的随机数", async function() {
         const { VRFConsumer, VRFCoordinator } = await loadFixture(deployVRFConsumerFixture);
         await VRFConsumer.requestRandomWords();
         const requestId = await VRFConsumer.s_requestId();

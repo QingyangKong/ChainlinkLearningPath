@@ -30,8 +30,9 @@ contract VRFTask is VRFConsumerBaseV2 {
      *   NUM_WORDS：单次申请随机数的数量
      * 
      * 注意：
-     * 通过 Remix 部署在非本地环境时，相关参数请查看 https://docs.chain.link/docs/vrf/v2/supported-networks/
-     * 获取 keyHash 的指和 vrfCoordinator 的地址，本地环境在测试脚本中已经自动配置
+     * 通过 Remix 部署在非本地环境时，相关参数请查看 
+     * https://docs.chain.link/docs/vrf/v2/supported-networks/，获取 keyHash 的指和 vrfCoordinator 的地址
+     * 本地环境在测试脚本中已经自动配置
      * 
      */ 
     uint64 immutable s_subscriptionId;
