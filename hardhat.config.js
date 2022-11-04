@@ -1,14 +1,24 @@
 /** @type import('hardhat/config').HardhatUserConfig */
-
-// const account = <在这里输入你的私钥>;
-// const url = <在这里输入你的 RPC（从 alchemy 或者 infura 获得）>;
+require("ethers");
+require("@nomiclabs/hardhat-ethers");
+require("@nomiclabs/hardhat-waffle");
 
 module.exports = {
-  solidity: "0.8.17", 
-  // networks: {
-  //   goerli: {
-  //     accounts: [account],
-  //     url: `${url}`
-  //   }
-  // }
+  solidity: {
+    compilers: [
+      {
+        version: "0.8.17",
+      },
+      {
+        version: "0.6.6",
+      }  
+    ]
+  }, 
+
+  paths: {
+    sources: "./contracts",
+    tests: "./test",
+    cache: "./build/cache",
+    artifacts: "./build/artifacts"
+    },
 };
