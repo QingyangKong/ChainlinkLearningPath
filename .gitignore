@@ -11,7 +11,7 @@ coverage.json
 typechain
 
 # don't push the solution of tasks
-.answer
+*.answer
 
 # don't push the environment vars!
 .env
