@@ -18,9 +18,9 @@
 ### 前期准备：
 1. fork `ChainlinkLearningPath` 这个 Repository 到你的 GitHub。
 2. git clone Repository 到本地: `git clone https://github.com/<Your username>/ChainlinkLearningPath.git`
-3. 安装浏览器端钱包 [Metamask](https://metamask.io/)，并且生成自己的账户地址。
-4. 通过 [Chainlink faucet](https://faucets.chain.link/) 获得 goerli 网络的 goerli ETH。
-5. 开始学习并且完成以下任务。
+3. 运行 `npm install` 或者 `yarn` 安装所需要的依赖。
+4. 在测试网部署时，安装浏览器端钱包 [Metamask](https://metamask.io/)，并且生成自己的账户地址。
+5. 在测试网部署时，通过 [Chainlink faucet](https://faucets.chain.link/) 获得 goerli 网络的 goerli ETH 以及 Link。
 ### 任务 1 - Chainlink Data Feed：
 1. （30分钟）学习下述学习资料中的 Chainlink Data Feed（喂价）部分内容。
 2. （10分钟）完成 [contracts/DataFeedTask.sol](./contracts/DataFeedTask.sol) 中的任务。
