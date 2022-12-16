@@ -1,6 +1,3 @@
-
-// An example of a consumer contract that relies on a subscription for funding.
-
 pragma solidity ^0.8.0;
 
 import "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol";

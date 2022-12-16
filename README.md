@@ -43,6 +43,8 @@ Chainlink Data Feeds 又称喂价，这项服务可以让用户的智能合约�
 - [Data Feed 应用页面](https://data.chain.link/)：你可以在这个页面看到 Chainlink 所提供的交易对的具体信息，比如说资产信息，节点运营商信息，网络信息，数据更新规则等等。
 - [Data Feed 聚合合约地址列表](https://docs.chain.link/docs/reference-contracts/)：你的智能合约中需要使用 VRFCoordinator 来集成 Chainlink VRF 的服务。
 
+***
+
 ### 2. Chainlink VRF（可验证随机数）学习资料
 Chainlink VRF（Verifiable Random Function）是一个随机数的生成器（Random Number Generator：RNG）。通过 Chainlink VRF 中，智能合约可以在不影响安全性和可用性的条件下获取随机数。
 
@@ -55,6 +57,9 @@ Chainlink VRF 生成的随机数不能被包括矿工，节点运营商，用户
 - [视频教程（英文）](https://www.youtube.com/watch?v=JqZWariqh5s)：讲解了 Chainlink VRF 的原理以及使用方法。
 - [Chainlink VRF 应用页面](https://vrf.chain.link/)：你可以通过这个网页注册 VRF Subscription 来使用 Chainlink VRF 获取随机数。
 - [VRFCoordinator 合约地址](https://docs.chain.link/docs/vrf/v2/supported-networks/)：智能合约中需要使用 VRFCoordinator 来集成 Chainlink VRF 的服务。
+
+***
+
 ### 3. Chainlink Automation（合约自动化执行）学习资料
 Chainlink Automation（曾经被命名为 Chainlink Keepers） 可以通过链下 Chainlink 去中心化预言机网络，根据条件或者时间触发链上智能合约，实现智能合约执行的自动化。
 
@@ -66,6 +71,8 @@ Chainlink Automation（曾经被命名为 Chainlink Keepers） 可以通过链�
 - [视频教程（英文）](https://www.youtube.com/watch?v=MSKDIy85xlI)：讲解了 Chainlink Automation 的原理。
 - [Chainlink Automation 应用页面](https://automation.chain.link/)：用户可以使用 UI 在不同链上的注册，取消以及监控 UpKeep。
 - [Chainlink Registry 地址](https://docs.chain.link/chainlink-automation/supported-networks)：可以通过发送交易的方式，在链上直接注册 UpKeep，让用户合约通过 Chainlink Automation 所自动化。
+
+***
 
 ### 4. Chainlink Any API（获取任意链下 API 数据）学习资料
 Chainlink Any API 可以让你的智能合约通过 Chainlink 去中心化预言机网络获取任意的外部数据。将智能合约与链下的数据相结合会给你的 DApp 增加很多复杂度，所以 Chainlink 通过 Any API 提供了一个极易使用并且很灵活的框架，可以将任何外部 API 的数据提供给区块链上的智能合约。
@@ -80,6 +87,8 @@ Chainlink Any API 可以让你的智能合约通过 Chainlink 去中心化预言
 - [视频教程（英文）第二部分](https://www.youtube.com/watch?v=fICFYsN4E74)：讲解了中如何结合 Chainlink 节点使用 External Adapter。
 - [测试网预言机合约地址](https://docs.chain.link/docs/any-api/testnet-oracles/)：可以通过列表中的预言机合约地址，使用已有 Chainlink 节点的 Any API 服务。
 - [Chainlink Market](https://market.link/overview)：在此页面查找不同链上的数据提供商，通过这些节点让智能合约获得诸如股票，天气，经济，体育等等领域的数据。
+
+*** 
 
 ## 接下来做什么？
 - 尝试在应用中使用 Chainlink 服务，扩展你的 dApp 的边界。
