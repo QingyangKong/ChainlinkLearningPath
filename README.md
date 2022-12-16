@@ -58,14 +58,14 @@ Chainlink VRF 生成的随机数不能被包括矿工，节点运营商，用户
 ### 3. Chainlink Automation（合约自动化执行）学习资料
 Chainlink Automation（曾经被命名为 Chainlink Keepers） 可以通过链下 Chainlink 去中心化预言机网络，根据条件或者时间触发链上智能合约，实现智能合约执行的自动化。
 
-由于区块链上的智能合约无法自动执行，通常开发人员需要通过链下脚本或者赏金模式来保证合约函数的处罚。Chainlink Keepers 可以以去中心化的方式，监控链上合约从而保证合约函数的执行。
+由于区块链上的智能合约无法自动执行，通常开发人员需要通过链下脚本或者赏金模式来保证合约函数的处罚。Chainlink Automation 可以以去中心化的方式，监控链上合约从而保证合约函数的执行。
 
 ### Automation 相关链接
-- [Keepers 官方技术文档](https://docs.chain.link/docs/chainlink-keepers/introduction/)：官方技术文档 Keepers 部分，包括原理讲解和样例合约。
-- [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=9)：讲解了 Chainlink Keepers 的原理并且进行代码演示。
-- [视频教程（英文）](https://www.youtube.com/watch?v=MSKDIy85xlI)：讲解了 Chainlink Keepers 的原理。
-- [Chainlink Automation 应用页面](https://keepers.chain.link/)：用户可以使用 UI 在不同链上的注册，取消以及监控 UpKeep。
-- [Chainlink Registry 地址](https://docs.chain.link/docs/chainlink-keepers/supported-networks/)：可以通过发送交易的方式，在链上直接注册 UpKeep，让用户合约通过 Chainlink Keepers 所自动化。
+- [Automation 官方技术文档](https://docs.chain.link/chainlink-automation/introduction)：官方技术文档 Automation 部分，包括原理讲解和样例合约。
+- [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=9)：讲解了 Chainlink Automation 的原理并且进行代码演示。
+- [视频教程（英文）](https://www.youtube.com/watch?v=MSKDIy85xlI)：讲解了 Chainlink Automation 的原理。
+- [Chainlink Automation 应用页面](https://automation.chain.link/)：用户可以使用 UI 在不同链上的注册，取消以及监控 UpKeep。
+- [Chainlink Registry 地址](https://docs.chain.link/chainlink-automation/supported-networks)：可以通过发送交易的方式，在链上直接注册 UpKeep，让用户合约通过 Chainlink Automation 所自动化。
 
 ### 4. Chainlink Any API（获取任意链下 API 数据）学习资料
 Chainlink Any API 可以让你的智能合约通过 Chainlink 去中心化预言机网络获取任意的外部数据。将智能合约与链下的数据相结合会给你的 DApp 增加很多复杂度，所以 Chainlink 通过 Any API 提供了一个极易使用并且很灵活的框架，可以将任何外部 API 的数据提供给区块链上的智能合约。
@@ -102,8 +102,8 @@ Chainlink 中国开发者社区会持续性输出 Chainlink 最新信息，并�
 
 ## 其他学习资料
 任务需要使用当前比较主流的 Hardhat 合约框架以及 Goerli 测试网络。
-- [Chainlink 视频教程](https://www.bilibili.com/video/BV1ed4y1N7Uv)：视频教程包含 Chainlink Data Feed, VRF 以及 Keepers 的原理讲解，使用方法以及代码演示。
-- [Chainlink 原理解析文字版](https://learnblockchain.cn/article/4766)：包含 Chainlink Data Feed, VRF 以及 Keepers 的原理讲解。
+- [Chainlink 视频教程](https://www.bilibili.com/video/BV1ed4y1N7Uv)：视频教程包含 Chainlink Data Feed, VRF 以及 Automation 的原理讲解，使用方法以及代码演示。
+- [Chainlink 原理解析文字版](https://learnblockchain.cn/article/4766)：包含 Chainlink Data Feed, VRF 以及 Automation 的原理讲解。
 - [常见技术问题汇总](https://learnblockchain.cn/people/398/questions)：列举出开发者曾经遇到过的问题以及解决方案。
 - [Chainlink 官方技术文档](https://docs.chain.link/)：Chainlink 官方文档，包括各个产品的原理讲解，样例代码，必要的配置信息和合约地址。
 - [Chainlink Github repo](https://github.com/smartcontractkit)：Chainlink 官方 GitHub，在官方文档以及视频教程中没有介绍的内容，可以通过查阅代码来验证。
@@ -114,7 +114,7 @@ Chainlink 中国开发者社区会持续性输出 Chainlink 最新信息，并�
 - [Chainlink预言机在智能合约中的77种应用方式（三）](https://learnblockchain.cn/article/4262)
 - [一文读懂Web3项目为什么需要以去中心化的方式实现自动化](https://learnblockchain.cn/article/4051)
 - [怎样通过 Etherscan 验证智能合约](https://learnblockchain.cn/article/4664)
-- [使用 Chainlink Keepers 实现智能合约函数的自动化执行](https://learnblockchain.cn/article/4451)
+- [使用 Chainlink Automation 实现智能合约函数的自动化执行](https://learnblockchain.cn/article/4451)
 - [NFT 交易所合约开发教程（Solidity & Hardhat）](https://learnblockchain.cn/article/4410)
 - [Solidity 的 ABI 和 bytecode 是什么](https://learnblockchain.cn/article/4668)
 - [通过 Chainlink Proof of Reserve 来验证 BTC 质押资产](https://learnblockchain.cn/article/4603)
