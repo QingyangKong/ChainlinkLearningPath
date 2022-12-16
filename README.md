@@ -38,7 +38,7 @@ Chainlink Data Feeds 又称喂价，这项服务可以让用户的智能合约�
 
 #### Data Feed 相关链接
 - [Data Feed 官方技术文档](https://docs.chain.link/docs/using-chainlink-reference-contracts/)：官方技术文档 Data Feed 部分，包括原理讲解和样例合约。
-- [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=2)：讲解了 Chainlink Data Feed 的原理以及使用方法。
+- [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=2)：讲解了 Chainlink Data Feed 的原理并且进行代码演示。
 - [视频教程（英文）](https://www.youtube.com/watch?v=e75kwGzvtnI)：讲解了 Chainlink Data Feed 的原理。
 - [Data Feed 应用页面](https://data.chain.link/)：你可以在这个页面看到 Chainlink 所提供的交易对的具体信息，比如说资产信息，节点运营商信息，网络信息，数据更新规则等等。
 - [Data Feed 聚合合约地址列表](https://docs.chain.link/docs/reference-contracts/)：你的智能合约中需要使用 VRFCoordinator 来集成 Chainlink VRF 的服务。
@@ -51,7 +51,7 @@ Chainlink VRF 收到随机数的请求以后，会将一个或者多个随机值
 Chainlink VRF 生成的随机数不能被包括矿工，节点运营商，用户和智能合约开发人员在内的任何一方单方面操纵和修改，因此保证了随机数和可靠性和安全性。
 ### VRF 相关链接
 - [VRF 官方技术文档](https://docs.chain.link/docs/vrf/v2/introduction/)：官方技术文档 VRF 部分，包括原理讲解和样例合约。
-- [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=5)：讲解了 Chainlink VRF 的原理以及使用方法。
+- [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=5)：讲解了 Chainlink VRF 的原理并且进行代码演示。
 - [视频教程（英文）](https://www.youtube.com/watch?v=JqZWariqh5s)：讲解了 Chainlink VRF 的原理以及使用方法。
 - [Chainlink VRF 应用页面](https://vrf.chain.link/)：你可以通过这个网页注册 VRF Subscription 来使用 Chainlink VRF 获取随机数。
 - [VRFCoordinator 合约地址](https://docs.chain.link/docs/vrf/v2/supported-networks/)：智能合约中需要使用 VRFCoordinator 来集成 Chainlink VRF 的服务。
@@ -62,9 +62,9 @@ Chainlink Automation（曾经被命名为 Chainlink Keepers） 可以通过链�
 
 ### Automation 相关链接
 - [Keepers 官方技术文档](https://docs.chain.link/docs/chainlink-keepers/introduction/)：官方技术文档 Keepers 部分，包括原理讲解和样例合约。
-- [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=9)：讲解了 Chainlink Keepers 的原理以及使用方法。
+- [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=9)：讲解了 Chainlink Keepers 的原理并且进行代码演示。
 - [视频教程（英文）](https://www.youtube.com/watch?v=MSKDIy85xlI)：讲解了 Chainlink Keepers 的原理。
-- [Chainlink Keepers 应用页面](https://keepers.chain.link/)：用户可以使用 UI 在不同链上的注册，取消以及监控 UpKeep。
+- [Chainlink Automation 应用页面](https://keepers.chain.link/)：用户可以使用 UI 在不同链上的注册，取消以及监控 UpKeep。
 - [Chainlink Registry 地址](https://docs.chain.link/docs/chainlink-keepers/supported-networks/)：可以通过发送交易的方式，在链上直接注册 UpKeep，让用户合约通过 Chainlink Keepers 所自动化。
 
 ### 4. Chainlink Any API（获取任意链下 API 数据）学习资料
@@ -75,7 +75,7 @@ Chainlink Any API 可以让你的智能合约通过 Chainlink 去中心化预言
 除此以外，开发者可以自建节点，在节点中创建任务，获取外部的 API，然后输入给链上的智能合约。通过自建节点，不仅让自身的合约实现数据获取，也可以作为数据提供商向市场上其他的智能合约提供 Any API 服务。
 ### Any API 相关链接
 - [Any API 官方技术文档](https://docs.chain.link/docs/any-api/introduction/)：官方技术文档 Any API 部分，包括原理讲解和样例合约。
-- [视频教程（中文）]()：WIP。
+- [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=13)：讲解了 Chainlink Any Api 的原理并且进行代码演示。
 - [视频教程（英文）第一部分](https://www.youtube.com/watch?v=DO3O6ZUtwbs)：讲解了如何运行 Chainlink 节点。
 - [视频教程（英文）第二部分](https://www.youtube.com/watch?v=fICFYsN4E74)：讲解了中如何结合 Chainlink 节点使用 External Adapter。
 - [测试网预言机合约地址](https://docs.chain.link/docs/any-api/testnet-oracles/)：可以通过列表中的预言机合约地址，使用已有 Chainlink 节点的 Any API 服务。
