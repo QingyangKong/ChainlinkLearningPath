@@ -28,8 +28,11 @@
 1. （30分钟）学习下述学习资料中的 Chainlink VRF（可验证随机数）部分内容。
 2. （30分钟）完成 [contracts/VRFTask.sol](./contracts/VRFTask.sol) 中的任务。
 ### 任务 3 - Chainlink Automation：
-1. （30分钟）学习下述学习资料中的 Chainlink Keepers（合约自动化执行）部分内容。
-2. （20分钟）完成 [contracts/KeepersTask.sol](./contracts/AutomationTask.sol) 中的任务。
+1. （30分钟）学习下述学习资料中的 Chainlink Automation（合约自动化执行）部分内容。
+2. （20分钟）完成 [contracts/AutomationTask.sol](./contracts/AutomationTask.sol) 中的任务。
+### 任务 4 - Chainlink Any API：
+1. （30分钟）学习下述学习资料中的 Chainlink AnyApi（任意 API）部分内容。
+2. （10分钟）完成 [contracts/ApiConsumerTask.sol](./contracts/ApiConsumer.sol) 中的任务。
 
 
 ## 学习资料
