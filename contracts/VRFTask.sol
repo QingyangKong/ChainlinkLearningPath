@@ -11,7 +11,7 @@ import "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol";
  * 参考视频教程： https://www.bilibili.com/video/BV1ed4y1N7Uv
  * 
  * 任务 2 完成标志：
- * 1. 通过命令 "yarn hardhat test" 使得单元测试 7-9 通过
+ * 1. 通过命令 "yarn hardhat test" 使得单元测试 8-10 通过
  * 2. 通过 Remix 在 goerli 测试网部署，并且测试执行是否如预期
 */
 

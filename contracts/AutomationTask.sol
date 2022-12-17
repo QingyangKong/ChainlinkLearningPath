@@ -15,7 +15,7 @@ import "@chainlink/contracts/src/v0.8/AutomationCompatible.sol";
  * 参考视频教程：https://www.bilibili.com/video/BV1ed4y1N7Uv?p=9
  * 
  * 任务 3 完成标志：
- * 1. 通过命令 "yarn hardhat test" 使得单元测试 10-11 通过
+ * 1. 通过命令 "yarn hardhat test" 使得单元测试 11-12 通过
  * 2. 通过 Remix 在 goerli 测试网部署，并且测试执行是否如预期
  */
 
