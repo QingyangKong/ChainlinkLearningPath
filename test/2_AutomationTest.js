@@ -10,14 +10,14 @@ describe("单元测试：Chainlink Automation", async function() {
         return { automation };
     }
 
-    it("单元测试 11： 状态未发生变化时，checkUpkeep 返回 false", async function() {
+    it("单元测试 2-0： 状态未发生变化时，checkUpkeep 返回 false", async function() {
         const { automation } = await loadFixture(deployAutomationFixture);
         const checkData = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(""));
         const { upkeepNeeded } = await automation.callStatic.checkUpkeep(checkData);
         assert.equal(upkeepNeeded, false);
     });
 
-    it("单元测试 12：满足 checkUpkeep 状态时，成功执行 performUpkeep ", async function() {
+    it("单元测试 2-1：满足 checkUpkeep 状态时，成功执行 performUpkeep ", async function() {
         const { automation } = await loadFixture(deployAutomationFixture);
         const checkData = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(""));
         

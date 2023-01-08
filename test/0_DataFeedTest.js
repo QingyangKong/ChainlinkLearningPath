@@ -46,7 +46,7 @@ describe("单元测试：Chainlink Data feed", async function() {
 
     // check if the contract is deployed successfully
     // check if the address of aggregator in the DataFeed is the same as aggregator
-    it("单元测试 1：LINK aggregator 地址配置正确", async () => {
+    it("单元测试 0-0：LINK aggregator 地址配置正确", async () => {
         const { dataFeed, mockV3AggregatorLink } = await loadFixture(
             deployDataFeedFixture
         )
@@ -55,7 +55,7 @@ describe("单元测试：Chainlink Data feed", async function() {
     })
 
 
-    it("单元测试 2：BTC aggregator 地址配置正确", async () => {
+    it("单元测试 0-1：BTC aggregator 地址配置正确", async () => {
         const { dataFeed, mockV3AggregatorBtc } = await loadFixture(
             deployDataFeedFixture
         )
@@ -64,7 +64,7 @@ describe("单元测试：Chainlink Data feed", async function() {
     })
       
 
-    it("单元测试 3：ETH aggregator 地址配置正确", async () => {
+    it("单元测试 0-2：ETH aggregator 地址配置正确", async () => {
         const { dataFeed, mockV3AggregatorEth } = await loadFixture(
             deployDataFeedFixture
         )
@@ -74,7 +74,7 @@ describe("单元测试：Chainlink Data feed", async function() {
 
 
     // check if the contract is able to fetched the corrected price data defined when the contract deployed
-    it("单元测试 4: Link aggregator 地址配置正确", async () => {
+    it("单元测试 0-3: Link aggregator 地址配置正确", async () => {
         const { dataFeed, mockV3AggregatorLink } = await loadFixture(
             deployDataFeedFixture
         );
@@ -83,7 +83,7 @@ describe("单元测试：Chainlink Data feed", async function() {
         assert.equal(dataFeedLatestPrice.toString(), dataFeedRound.toString())
     })
 
-    it("单元测试 5: BTC aggregator 返回正确结果", async () => {
+    it("单元测试 0-4: BTC aggregator 返回正确结果", async () => {
         const { dataFeed, mockV3AggregatorBtc } = await loadFixture(
             deployDataFeedFixture
         );
@@ -92,7 +92,7 @@ describe("单元测试：Chainlink Data feed", async function() {
         assert.equal(dataFeedLatestPrice.toString(), dataFeedRound.toString())
     })
         
-    it("单元测试 6: ETH aggregator 返回正确结果", async () => {
+    it("单元测试 0-5: ETH aggregator 返回正确结果", async () => {
         const { dataFeed, mockV3AggregatorEth } = await loadFixture(
             deployDataFeedFixture
         );
@@ -101,7 +101,7 @@ describe("单元测试：Chainlink Data feed", async function() {
         assert.equal(dataFeedLatestPrice.toString(), dataFeedRound.toString())
     })
 
-    it("单元测试 7: LINK aggregator 返回正确结果", async () => {
+    it("单元测试 0-6: LINK aggregator 返回正确结果", async () => {
         const { dataFeed, mockV3AggregatorLink } = await loadFixture(
             deployDataFeedFixture
         );

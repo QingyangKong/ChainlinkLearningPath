@@ -40,8 +40,8 @@ describe("单元测试：Chainlink AnyAPI", async function() {
         const jobId = ethers.utils.toUtf8Bytes("29fa9aa13bf1468788b7cc4a500a45b8");
         const fee = "100000000000000000";
 
-        const apiConsumerFactory = await ethers.getContractFactory("APIConsumer");
-        const apiConsumer = await apiConsumerFactory.deploy(
+        const anyApiFactory = await ethers.getContractFactory("AnyApiTask");
+        const anyApi = await anyApiFactory.deploy(
             mockOracle.address,
             jobId,
             fee,
@@ -49,27 +49,27 @@ describe("单元测试：Chainlink AnyAPI", async function() {
         );
         
         const fundAmount = "1000000000000000000";
-        await linkToken.transfer(apiConsumer.address, fundAmount);
+        await linkToken.transfer(anyApi.address, fundAmount);
 
-        return { apiConsumer, mockOracle}
+        return { anyApi, mockOracle }
     }
 
-    it("单元测试 13： requestVolume, 成功发送 Chainlink 请求", async function() {
-        const { apiConsumer } = await loadFixture(deployAnyApiFixture);
-        const transaction = await apiConsumer.requestVolume();
+    it("单元测试 3-0： requestVolume, 成功发送 Chainlink 请求", async function() {
+        const { anyApi } = await loadFixture(deployAnyApiFixture);
+        const transaction = await anyApi.requestVolume();
         const transactionReceipt = await transaction.wait(1);
         const requestId = transactionReceipt.events[0].topics[1];
         expect(requestId).to.not.be.null;
     });
 
-    it("单元测试 14： requestVolume, 成功发送 Chainlink 请求，并且收到结果", async function() {
-        const { apiConsumer, mockOracle } = await loadFixture(deployAnyApiFixture);
-        const transaction = await apiConsumer.requestVolume();
+    it("单元测试 3-1： requestVolume, 成功发送 Chainlink 请求，并且收到结果", async function() {
+        const { anyApi, mockOracle } = await loadFixture(deployAnyApiFixture);
+        const transaction = await anyApi.requestVolume();
         const transactionReceipt = await transaction.wait(1);
         const requestId = transactionReceipt.events[0].topics[1];
         const callbackValue = 777;
         await mockOracle.fulfillOracleRequest(requestId, numToBytes32(callbackValue));
-        const volume = await apiConsumer.volume();
+        const volume = await anyApi.volume();
         assert.equal(volume.toString(), callbackValue.toString()); 
     });
 
