@@ -18,7 +18,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
  * updateTokenUri 实现功能
  *  - 将 tokenId 的 uri 改为 uriToUpdate
  * 
- * 任务 2 完成标志：
+ * 任务 5 完成标志：
  * 1. 可以通过 4_nft_basic_test.js 中的所有测试：4-1 到 4-5
  * 2. 可以在 opensea 的测试网（https://testnets.opensea.io/zh-CN）中看到发布的动态 NFT
  * 3. 通过调用 updateTokenUri 来实现图片的更新

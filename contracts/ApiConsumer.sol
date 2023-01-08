@@ -5,6 +5,16 @@ import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
 import "@chainlink/contracts/src/v0.8/ConfirmedOwner.sol";
 import "./WeatherToken.sol";
 
+/*
+ * 任务 6：
+ * 通过 Chainlink AnyApi 给在任务 5 中部署的动态 NFT 更新数据
+ * 完成 requestTempreture 和 fulfill
+ * 
+ * 任务 6 完成标志：
+ * 1. fulfill 函数可以成功调用 weatherToken 的 setUriToUpdate 函数
+ * 2. 可以在 opensea 的测试网（https://testnets.opensea.io/zh-CN）中看到 NFT 的图片发生了更新
+*/
+
 contract APIConsumer is ChainlinkClient, ConfirmedOwner {
     using Chainlink for Chainlink.Request;
 
@@ -14,13 +24,8 @@ contract APIConsumer is ChainlinkClient, ConfirmedOwner {
     address public nftAddress;
 
     constructor(address _nftAddress) ConfirmedOwner(msg.sender) {
+        // 代码中的设置适用于
         setChainlinkToken(0x326C977E6efc84E512bB9C30f76E30c160eD06FB);
-        
-        // private address and jobId
-        // setChainlinkOracle(0x4217B5985dF90357BE40A4E5c5C9Db97465C6261);
-        // jobId = "eaab3c37bad44a51bb62bab4cafea330";
-        
-        // address and jobId maintained by Chainlink devrel team
         setChainlinkOracle(0xCC79157eb46F5624204f47AB42b3906cAA40eaB7);
         jobId = "ca98366cc7314957b8c012c72f05aeeb";
         fee = (1 * LINK_DIVISIBILITY) / 10; // 0,1 * 10**18 (Varies by network and job)
@@ -31,10 +36,6 @@ contract APIConsumer is ChainlinkClient, ConfirmedOwner {
         nftAddress = addressToUpdate;
     }
 
-    /**
-     * Create a Chainlink request to retrieve API response, find the target
-     * data, then multiply by 1000000000000000000 (to remove decimal places from data).
-     */
     function requestTemperature() public returns (bytes32 requestId) {
         Chainlink.Request memory req = buildChainlinkRequest(
             jobId,
@@ -42,37 +43,34 @@ contract APIConsumer is ChainlinkClient, ConfirmedOwner {
             this.fulfill.selector
         );
 
-        // Set the URL to perform the GET request on
+        // 可以通过高德或者其他你喜欢的 api 获得天气数据 
+        // 高德 Api 使用方法：https://lbs.amap.com/api/webservice/guide/api/weatherinfo
+        // 补完下面一行代码
         req.add(
             "get",
-            "https://restapi.amap.com/v3/weather/weatherInfo?city=440300&key=5d48285a3ae22561983e6caa93b5b0b5"
+            "https://restapi.amap.com/v3/weather/weatherInfo?city=110101&key=<key>"
         );
 
-        req.add("path", "lives,0,temperature"); // Chainlink nodes 1.0.0 and later support this format
+        // 完成 path：指的是 json 数据中的有效信息的位置
+        // 补完下面一行代码
+        req.add("path", "");
 
-        // Multiply the result by 1000000000000000000 to remove decimals
         int256 timesAmount = 10 ** 18;
         req.addInt("times", timesAmount);
-
-        // Sends the request
         return sendChainlinkRequest(req, fee);
     }
 
     /**
-     * Receive the response in the form of uint256
+     * 回调函数，收到预言机节点发回的 uint256 数据
      */
     function fulfill(
         bytes32 _requestId,
         uint256 _temperature
     ) public recordChainlinkFulfillment(_requestId) {
-        temperature = _temperature;
-        WeatherToken weatherToken = WeatherToken(nftAddress);
-        weatherToken.setUriToUpdate(temperature);
+        // 通过返回的 temperature 调用 WeatherToken 中的 setUriToUpdate 函数
+        // 请在此添加代码
     }
 
-    /**
-     * Allow withdraw of Link tokens from the contract
-     */
     function withdrawLink() public onlyOwner {
         LinkTokenInterface link = LinkTokenInterface(chainlinkTokenAddress());
         require(
