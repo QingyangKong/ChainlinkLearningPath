@@ -2,68 +2,82 @@
 pragma solidity ^0.8.7;
 
 import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
+import "@chainlink/contracts/src/v0.8/ConfirmedOwner.sol";
+import "./WeatherToken.sol";
 
-/*
- * 任务 4 内容，发送一个 Chainlink request，从外部获取一个数据
- * 
- * 参考视频教程：https://www.bilibili.com/video/BV1ed4y1N7Uv?p=13
- * 
- * 任务 4 完成标志：
- * 1. 通过命令 "yarn hardhat test" 使得单元测试 11-12 通过
- * 2. 通过 Remix 在 goerli 测试网部署，并且测试执行是否如预期
- */
-contract APIConsumer is ChainlinkClient {
+contract APIConsumer is ChainlinkClient, ConfirmedOwner {
     using Chainlink for Chainlink.Request;
 
-    uint256 public volume;
-    address private immutable oracle;
-    bytes32 private immutable jobId;
-    uint256 private immutable fee;
+    uint256 public temperature;
+    bytes32 private jobId;
+    uint256 private fee;
+    address public nftAddress;
 
-    event DataFulfilled(uint256 volume);
-
-    constructor(
-        address _oracle,
-        bytes32 _jobId,
-        uint256 _fee,
-        address _link
-    ) {
-        if (_link == address(0)) {
-            setPublicChainlinkToken();
-        } else {
-            setChainlinkToken(_link);
-        }
-        oracle = _oracle;
-        jobId = _jobId;
-        fee = _fee;
+    constructor(address _nftAddress) ConfirmedOwner(msg.sender) {
+        setChainlinkToken(0x326C977E6efc84E512bB9C30f76E30c160eD06FB);
+        
+        // private address and jobId
+        // setChainlinkOracle(0x4217B5985dF90357BE40A4E5c5C9Db97465C6261);
+        // jobId = "eaab3c37bad44a51bb62bab4cafea330";
+        
+        // address and jobId maintained by Chainlink devrel team
+        setChainlinkOracle(0xCC79157eb46F5624204f47AB42b3906cAA40eaB7);
+        jobId = "ca98366cc7314957b8c012c72f05aeeb";
+        fee = (1 * LINK_DIVISIBILITY) / 10; // 0,1 * 10**18 (Varies by network and job)
+        nftAddress = _nftAddress;
     }
 
-    /*
-     * 步骤 1 - 构建一个 Chainlink request
-     * 通过 requestVolume 函数，给 Chainlink 发送获取外部数据请求
-     */    
-    function requestVolume() public returns (bytes32 requestId) {
-        Chainlink.Request memory request;
-        //构建 Chainlink request
-        /**
-         * 在这里添加代码，在本地网络中可以使用非真实的 API 以及相关信息
-         * 如果在测试网中，需要使用真实 url 和 path，
-         * 可以参考此处代码：https://docs.chain.link/any-api/get-request/examples/single-word-response
-         * **/
+    function updateNftAddress(address addressToUpdate) public onlyOwner  {
+        nftAddress = addressToUpdate;
     }
 
-    /*
-     * 步骤 2 - 接受 Chainlink 返回的数据
-     * 通过 fulfill 函数，从外部 API 获得一个数据
-     */    
-    function fulfill(bytes32 _requestId, uint256 _volume) public recordChainlinkFulfillment(_requestId) {
-        /**
-         * 在这里添加代码，在本地网络中可以使用任意一个 API
-         * 奖 _volume 存储在 volume 中
-         * 可以参考此处代码：https://docs.chain.link/any-api/get-request/examples/single-word-response
-         * **/
-        emit DataFulfilled(volume);
+    /**
+     * Create a Chainlink request to retrieve API response, find the target
+     * data, then multiply by 1000000000000000000 (to remove decimal places from data).
+     */
+    function requestTemperature() public returns (bytes32 requestId) {
+        Chainlink.Request memory req = buildChainlinkRequest(
+            jobId,
+            address(this),
+            this.fulfill.selector
+        );
+
+        // Set the URL to perform the GET request on
+        req.add(
+            "get",
+            "https://restapi.amap.com/v3/weather/weatherInfo?city=440300&key=5d48285a3ae22561983e6caa93b5b0b5"
+        );
+
+        req.add("path", "lives,0,temperature"); // Chainlink nodes 1.0.0 and later support this format
+
+        // Multiply the result by 1000000000000000000 to remove decimals
+        int256 timesAmount = 10 ** 18;
+        req.addInt("times", timesAmount);
+
+        // Sends the request
+        return sendChainlinkRequest(req, fee);
     }
 
-    function withdrawLink() external {}
+    /**
+     * Receive the response in the form of uint256
+     */
+    function fulfill(
+        bytes32 _requestId,
+        uint256 _temperature
+    ) public recordChainlinkFulfillment(_requestId) {
+        temperature = _temperature;
+        WeatherToken weatherToken = WeatherToken(nftAddress);
+        weatherToken.setUriToUpdate(temperature);
+    }
+
+    /**
+     * Allow withdraw of Link tokens from the contract
+     */
+    function withdrawLink() public onlyOwner {
+        LinkTokenInterface link = LinkTokenInterface(chainlinkTokenAddress());
+        require(
+            link.transfer(msg.sender, link.balanceOf(address(this))),
+            "Unable to transfer"
+        );
+    }
 }
