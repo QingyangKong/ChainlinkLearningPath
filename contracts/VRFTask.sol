@@ -32,11 +32,25 @@ contract VRFTask is VRFConsumerBaseV2 {
      * 本地环境在测试脚本中已经自动配置
      * 
      */ 
-    uint64 immutable s_subscriptionId;
-    bytes32 immutable s_keyHash;
+
+    // Chainlink VRF 在接收到请求后，会通过 fulfillRandomWords 将数据写回到用户合约，此过程需要消耗 gas
+    // CALL_BACK_LIMIT 是回调函数可以消耗的最大 gas，根据回调函数的逻辑适当调整 CALL_BACK_LIMIT
+    // 详情请查看：https://docs.chain.link/vrf/v2/subscription/examples/get-a-random-number#analyzing-the-contract
     uint32 constant CALL_BACK_LIMIT = 100;
+    
+    // Chainlink VRF 在返回随机数之前应该等待的 Confirmation，值越大，返回的值越安全
     uint16 constant REQUEST_CONFIRMATIONS = 1;
+
+    // Chainlink VRF 在每次请求后返回的随机数数量
     uint32 constant NUM_WORDS = 1;
+
+    // 非本地环境部署，构造函数需要对 s_subscriptionId 和 s_keyHash 赋值（本地测试时不需要配置）
+    // s_subscriptionId 是 VRF subscription ID（订阅 ID）
+    // 在这里创建并且获得 subscription id https://vrf.chain.link/
+    uint64 immutable s_subscriptionId;
+    // s_keyHash 是 VRF 的 gas Lane，决定回调时所使用的 gas price
+    // 在这里查看  https://docs.chain.link/vrf/v2/subscription/supported-networks
+    bytes32 immutable s_keyHash;
 
     uint256[] public s_randomWords;
     uint256 public s_requestId;
