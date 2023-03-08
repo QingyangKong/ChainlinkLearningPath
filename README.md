@@ -5,9 +5,9 @@
 
 本项目的目的是通过 [几个简单的任务](#练习任务) 和 [配套的教程](#学习资料) 来帮助开发者了解 Chainlink 预言机，**目标人群**为想要了解预言机的智能合约开发者。
 
-<b>完成这几个任务以后，将地址提交给 Frank 以获得 SBT 资质证明以及周边礼物！</b>
+<b>完成这几个任务以后，将地址提交给 Frank 以获得 SBT 学历证明以及 Chainlink Swag！</b>
 
-Chainlink degree SBT
+:heart: Chainlink degree SBT :heart:
 
 <image src="./image/Chainlinkdegree.png" width="200">
 
@@ -92,14 +92,14 @@ Chainlink Any API 可以让你的智能合约通过 Chainlink 去中心化预言
 
 *** 
 
-## 接下来做什么？
+## 接下来可以做什么？
 - 尝试在应用中使用 Chainlink 服务，扩展你的 dApp 的边界。
 
 - 参与 Chainlink 生态中的活动，获得更多资源。比如 Chainlink 黑客松，Chainlink 每年会有举办两届黑客松：4 月开始的[春季黑客松](https://chainlinkspring2022.devpost.com/)和 10 月开始的[秋季黑客松](https://chain.link/hackathon)。
 
 - 申请 Chainlink Grant。为了鼓励生态发展，给行业做贡献，Chainlink 官方会对有创新性和社会影响力的项目提供 Grant。在[这里](https://chain.link/community/grants)查看 Chainlink Grant 具体信息以及往期项目介绍。
 
-- 申请 Chainlink 孵化器 Startup With Chainlink。Chainlink 官方会帮助优秀的早期项目方提供包括项目指导，资源对接的服务。在[这里](https://chainlinklabs.com/startup)查看 Startup With Chainlink 的更多信息。
+- 申请 Chainlink BUILD。Chainlink 官方会帮助优秀的早期项目方提供包括项目指导，资源对接以及资金的帮助。在[这里](https://blog.chain.link/chainlink-build-program/)查看 Chainlink BUILD 的更多信息。
 
 - 成为 Chainlink Contributor。如果想要给 Chainlink 共享代码，请查看 [contributor 规则](https://github.com/smartcontractkit/chainlink/blob/develop/docs/CONTRIBUTING.md)。如果想让团队增加新的特性，或者是提交 bug，请在官方 GitHub 的 [Issue](https://github.com/smartcontractkit/chainlink/issues) 中提交。
 - 赏金猎人。如果发现了任何的 vulnerability 或者 bug，欢迎提交给团队，获得赏金（bounty），请在[赏金计划](https://hackerone.com/chainlink?type=team)中查看更多的内容。
@@ -108,8 +108,8 @@ Chainlink Any API 可以让你的智能合约通过 Chainlink 去中心化预言
 Chainlink 中国开发者社区会持续性输出 Chainlink 最新信息，并且不定期举办一些分享来学习优秀案例。如果在使用 Chainlink 的时候遇到了任何的问题，可以和熟悉该技术的开发者和社区人员一起交流。
 
 如果想要加入社区，请扫描以下二维码：
-![image](./image/QRCode.png)
 
+<image src="./image/QRCode.png" width="200">
 
 ## 其他学习资料
 任务需要使用当前比较主流的 Hardhat 合约框架以及 Goerli 测试网络。
@@ -120,6 +120,12 @@ Chainlink 中国开发者社区会持续性输出 Chainlink 最新信息，并�
 - [Chainlink Github repo](https://github.com/smartcontractkit)：Chainlink 官方 GitHub，在官方文档以及视频教程中没有介绍的内容，可以通过查阅代码来验证。
 - [（32 小时最全课程）区块链，智能合约 & 全栈 Web3 开发](https://www.bilibili.com/video/BV1Ca411n7ta)
 - [Chainlink Hardhat starter kit](https://github.com/smartcontractkit/hardhat-starter-kit)
+- [Solidity 的 ABI 和 bytecode 是什么](https://learnblockchain.cn/article/4668)
+- [2023 年 6 大智能合约语言](https://learnblockchain.cn/article/5467)
+- [怎样开发智能合约中的时间锁](https://learnblockchain.cn/article/4735)
+- [如何在 NFT(ERC721)中获取随机数](https://learnblockchain.cn/article/3951)
+- [如何部署和使用可升级的智能合约](https://learnblockchain.cn/article/5167)
+- [平均价格算法：TWAP vs. VWAP](https://learnblockchain.cn/article/5184)
 - [Chainlink预言机在智能合约中的77种应用方式（一）](https://learnblockchain.cn/article/4115)
 - [Chainlink预言机在智能合约中的77种应用方式（二）](https://learnblockchain.cn/article/4144)
 - [Chainlink预言机在智能合约中的77种应用方式（三）](https://learnblockchain.cn/article/4262)
@@ -127,11 +133,11 @@ Chainlink 中国开发者社区会持续性输出 Chainlink 最新信息，并�
 - [怎样通过 Etherscan 验证智能合约](https://learnblockchain.cn/article/4664)
 - [使用 Chainlink Automation 实现智能合约函数的自动化执行](https://learnblockchain.cn/article/4451)
 - [NFT 交易所合约开发教程（Solidity & Hardhat）](https://learnblockchain.cn/article/4410)
-- [Solidity 的 ABI 和 bytecode 是什么](https://learnblockchain.cn/article/4668)
+- [Chainlink 2022 年秋季黑客松获奖项目介绍](https://learnblockchain.cn/article/5232)
+- [如何审计一个智能合约](https://learnblockchain.cn/article/5466)
+- [Web3 移动应用开发资源](https://learnblockchain.cn/article/5497)
 - [通过 Chainlink Proof of Reserve 来验证 BTC 质押资产](https://learnblockchain.cn/article/4603)
 - [开发 dApp 的三个步骤](https://learnblockchain.cn/article/4715)
-- [怎样开发智能合约中的时间锁](https://learnblockchain.cn/article/4735)
-- [如何在 NFT(ERC721)中获取随机数](https://learnblockchain.cn/article/3951)
 - [如何在 Hardhat 中使用 Chainlink](https://learnblockchain.cn/article/3823)
 - [如何在 BNB 链上创建 BEP-20 通证](https://learnblockchain.cn/article/3917)
 - [如何在 Polygon 上创建 ERC-20 通证](https://learnblockchain.cn/article/4080)
