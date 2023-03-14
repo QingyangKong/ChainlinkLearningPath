@@ -8,7 +8,7 @@
 <b>完成这前 3 个任务以后，将地址提交给 Frank 以获得 SBT 学历证明以及 Chainlink Swag！</b>
 
 :heart: Chainlink degree SBT :heart:
-
+https://polygonscan.com/address/0x5a1805ffd9cfa1f79fb3cfced12e02e342672e2e
 <image src="./image/Chainlinkdegree.png" width="200">
 
 
@@ -17,27 +17,25 @@
 1. 安装 git。 `brew install git`
 2. 安装 nodeJs。 `brew install node`
 3. Fork 这个 repo。
-4. `git clone https://github.com/<Your username>/ChainlinkLearningPath.git`
+4. `git clone https://github.com/<YOUR_USERNAME>/ChainlinkLearningPath.git`
 5. 运行 `npm install` 所需要的依赖。
 6. 在测试网部署时，安装浏览器端钱包 [Metamask](https://metamask.io/)，并且生成自己的账户地址。
 7. 在测试网部署时，通过 [Chainlink faucet](https://faucets.chain.link/) 获得 Sepolia 测试网的 ETH 以及 Link。
 ### 任务 1 - Chainlink Data Feed：
-1. （30分钟）学习[下述学习资料](#学习资料)中的 Chainlink Data Feed（喂价）部分内容。
-2. （10分钟）完成 [contracts/DataFeedTask.sol](./contracts/DataFeedTask.sol) 中的任务。
+1. 学习[下述学习资料](#学习资料)中的 Chainlink Data Feed（喂价）部分内容。
+2. 完成 [contracts/DataFeedTask.sol](./contracts/DataFeedTask.sol) 中的任务。
 ### 任务 2 - Chainlink VRF：
-1. （30分钟）学习[下述学习资料](#学习资料)的 Chainlink VRF（可验证随机数）部分内容。
-2. （30分钟）完成 [contracts/VRFTask.sol](./contracts/VRFTask.sol) 中的任务。
+1. 学习[下述学习资料](#学习资料)的 Chainlink VRF（可验证随机数）部分内容。
+2. 完成 [contracts/VRFTask.sol](./contracts/VRFTask.sol) 中的任务。
 ### 任务 3 - Chainlink Automation：
-1. （30分钟）学习[下述学习资料](#学习资料)中的 Chainlink Automation（合约自动化执行）部分内容。
-2. （20分钟）完成 [contracts/AutomationTask.sol](./contracts/AutomationTask.sol) 中的任务。
+1. 学习[下述学习资料](#学习资料)中的 Chainlink Automation（合约自动化执行）部分内容。
+2. 完成 [contracts/AutomationTask.sol](./contracts/AutomationTask.sol) 中的任务。
 
-:beer: :beer: :beer: :beer: :beer:
-
-<b>完成以上 3 个任务后，请提交用来完成任务的测试网地址，将发送 SBT 证明！</b>
+<b>:beer: :beer: 完成以上 3 个任务后，请提交用来完成任务的测试网地址，将发送 SBT 证明！ :beer: :beer:</b>
 
 ### 任务 4（advanced） - Chainlink Any API：
-1. （30分钟）学习[下述学习资料](#学习资料)中的 Chainlink AnyApi（任意 API）部分内容。
-2. （10分钟）完成 [contracts/ApiConsumerTask.sol](./contracts/ApiConsumer.sol) 中的任务。
+1. 学习[下述学习资料](#学习资料)中的 Chainlink AnyApi（任意 API）部分内容。
+2. 完成 [contracts/ApiConsumerTask.sol](./contracts/ApiConsumer.sol) 中的任务。
 
 
 ## 学习资料
