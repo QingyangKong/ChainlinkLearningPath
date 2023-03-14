@@ -5,7 +5,7 @@
 
 本项目的目的是通过 [几个简单的任务](#练习任务) 和 [配套的教程](#学习资料) 来帮助开发者了解 Chainlink 预言机，**目标人群**为想要了解预言机的智能合约开发者。
 
-<b>完成这几个任务以后，将地址提交给 Frank 以获得 SBT 学历证明以及 Chainlink Swag！</b>
+<b>完成这前 3 个任务以后，将地址提交给 Frank 以获得 SBT 学历证明以及 Chainlink Swag！</b>
 
 :heart: Chainlink degree SBT :heart:
 
@@ -16,10 +16,11 @@
 ### 前期准备：
 1. 安装 git。 `brew install git`
 2. 安装 nodeJs。 `brew install node`
-3. `git clone https://github.com/<Your username>/ChainlinkLearningPath.git`
-4. 运行 `npm install` 所需要的依赖。
-5. 在测试网部署时，安装浏览器端钱包 [Metamask](https://metamask.io/)，并且生成自己的账户地址。
-6. 在测试网部署时，通过 [Chainlink faucet](https://faucets.chain.link/) 获得 Sepolia 测试网的 ETH 以及 Link。
+3. Fork 这个 repo。
+4. `git clone https://github.com/<Your username>/ChainlinkLearningPath.git`
+5. 运行 `npm install` 所需要的依赖。
+6. 在测试网部署时，安装浏览器端钱包 [Metamask](https://metamask.io/)，并且生成自己的账户地址。
+7. 在测试网部署时，通过 [Chainlink faucet](https://faucets.chain.link/) 获得 Sepolia 测试网的 ETH 以及 Link。
 ### 任务 1 - Chainlink Data Feed：
 1. （30分钟）学习[下述学习资料](#学习资料)中的 Chainlink Data Feed（喂价）部分内容。
 2. （10分钟）完成 [contracts/DataFeedTask.sol](./contracts/DataFeedTask.sol) 中的任务。
@@ -29,7 +30,12 @@
 ### 任务 3 - Chainlink Automation：
 1. （30分钟）学习[下述学习资料](#学习资料)中的 Chainlink Automation（合约自动化执行）部分内容。
 2. （20分钟）完成 [contracts/AutomationTask.sol](./contracts/AutomationTask.sol) 中的任务。
-### 任务 4 - Chainlink Any API：
+
+:beer: :beer: :beer: :beer: :beer:
+
+<b>完成以上 3 个任务后，请提交用来完成任务的测试网地址，将发送 SBT 证明！</b>
+
+### 任务 4（advanced） - Chainlink Any API：
 1. （30分钟）学习[下述学习资料](#学习资料)中的 Chainlink AnyApi（任意 API）部分内容。
 2. （10分钟）完成 [contracts/ApiConsumerTask.sol](./contracts/ApiConsumer.sol) 中的任务。
 
@@ -39,8 +45,8 @@
 Chainlink Data Feeds 又称喂价，这项服务可以让用户的智能合约以最快的方式获得特定资产标的价格，不论你使用的是链上的智能合约和还是链下应用，都可以通过单一请求，从 Chainlink Data Feeds 获得资产的价格数据。
 
 #### Data Feed 相关链接
-- [Data Feed 官方技术文档](https://docs.chain.link/docs/using-chainlink-reference-contracts/)：官方技术文档 Data Feed 部分，包括原理讲解和样例合约。
 - [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=2)：讲解了 Chainlink Data Feed 的原理并且进行代码演示。
+- [Data Feed 官方技术文档](https://docs.chain.link/docs/using-chainlink-reference-contracts/)：官方技术文档 Data Feed 部分，包括原理讲解和样例合约。
 - [视频教程（英文）](https://www.youtube.com/watch?v=e75kwGzvtnI)：讲解了 Chainlink Data Feed 的原理。
 - [Data Feed 应用页面](https://data.chain.link/)：你可以在这个页面看到 Chainlink 所提供的交易对的具体信息，比如说资产信息，节点运营商信息，网络信息，数据更新规则等等。
 - [Data Feed 聚合合约地址列表](https://docs.chain.link/docs/reference-contracts/)：你的智能合约中需要使用 VRFCoordinator 来集成 Chainlink VRF 的服务。
@@ -54,8 +60,8 @@ Chainlink VRF 收到随机数的请求以后，会将一个或者多个随机值
 
 Chainlink VRF 生成的随机数不能被包括矿工，节点运营商，用户和智能合约开发人员在内的任何一方单方面操纵和修改，因此保证了随机数和可靠性和安全性。
 ### VRF 相关链接
-- [VRF 官方技术文档](https://docs.chain.link/docs/vrf/v2/introduction/)：官方技术文档 VRF 部分，包括原理讲解和样例合约。
 - [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=5)：讲解了 Chainlink VRF 的原理并且进行代码演示。
+- [VRF 官方技术文档](https://docs.chain.link/docs/vrf/v2/introduction/)：官方技术文档 VRF 部分，包括原理讲解和样例合约。
 - [视频教程（英文）](https://www.youtube.com/watch?v=JqZWariqh5s)：讲解了 Chainlink VRF 的原理以及使用方法。
 - [Chainlink VRF 应用页面](https://vrf.chain.link/)：你可以通过这个网页注册 VRF Subscription 来使用 Chainlink VRF 获取随机数。
 - [VRFCoordinator 合约地址](https://docs.chain.link/docs/vrf/v2/supported-networks/)：智能合约中需要使用 VRFCoordinator 来集成 Chainlink VRF 的服务。
@@ -68,8 +74,8 @@ Chainlink Automation（曾经被命名为 Chainlink Keepers） 可以通过链�
 由于区块链上的智能合约无法自动执行，通常开发人员需要通过链下脚本或者赏金模式来保证合约函数的处罚。Chainlink Automation 可以以去中心化的方式，监控链上合约从而保证合约函数的执行。
 
 ### Automation 相关链接
-- [Automation 官方技术文档](https://docs.chain.link/chainlink-automation/introduction)：官方技术文档 Automation 部分，包括原理讲解和样例合约。
 - [视频教程（中文）](https://www.bilibili.com/video/BV1ed4y1N7Uv?p=9)：讲解了 Chainlink Automation 的原理并且进行代码演示。
+- [Automation 官方技术文档](https://docs.chain.link/chainlink-automation/introduction)：官方技术文档 Automation 部分，包括原理讲解和样例合约。
 - [视频教程（英文）](https://www.youtube.com/watch?v=MSKDIy85xlI)：讲解了 Chainlink Automation 的原理。
 - [Chainlink Automation 应用页面](https://automation.chain.link/)：用户可以使用 UI 在不同链上的注册，取消以及监控 UpKeep。
 - [Chainlink Registry 地址](https://docs.chain.link/chainlink-automation/supported-networks)：可以通过发送交易的方式，在链上直接注册 UpKeep，让用户合约通过 Chainlink Automation 所自动化。
