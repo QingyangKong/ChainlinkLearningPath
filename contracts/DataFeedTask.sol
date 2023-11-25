@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: SEE LICENSE IN LICENSE
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.7;
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
@@ -9,7 +9,7 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
  * 
  * 任务 1 完成标志：
  * 1. 通过命令 "yarn hardhat test" 使得单元测试 1-7 通过
- * 2. 通过 Remix 在 goerli 测试网部署，并且测试执行是否如预期
+ * 2. 通过 Remix 在 Ethereum Sepolia 测试网部署，并且测试执行是否如预期
 */
 
 contract DataFeedTask {
@@ -28,7 +28,7 @@ contract DataFeedTask {
      * 
      * 注意：
      * 通过 Remix 部署在非本地环境中时
-     * 查看 aggregator 的地址 https://docs.chain.link/docs/ethereum-addresses/#Goerli%20Testnet，获得 Aggregator 合约地址
+     * 通过 https://docs.chain.link/data-feeds/price-feeds/addresses，获得 Aggregator Sepolia 测试网合约地址
      * 本地环境中相关参数已经在测试脚本中配置
      *  */
     constructor(
@@ -71,7 +71,7 @@ contract DataFeedTask {
     }
 
     /**
-     * 步骤 5 - 通过 Remix 将合约部署合约（使用 goerli 网络）
+     * 步骤 5 - 通过 Remix 将合约部署合约
      * 
      * 任务成功标志：
      * 合约部署成功

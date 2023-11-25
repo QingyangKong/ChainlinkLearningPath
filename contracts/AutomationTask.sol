@@ -1,22 +1,22 @@
-// SPDX-License-Identifier: SEE LICENSE IN LICENSE
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.7;
 
-import "@chainlink/contracts/src/v0.8/AutomationCompatible.sol";
+import "@chainlink/contracts/src/v0.8/automation/AutomationCompatible.sol";
 
 /*
- * 任务 3 内容，试想一个小游戏，一个数组位置角色的生命值（healthPoint）
+ * 任务 3 内容，试想一个小游戏，数组 health 用于存储 10 个角色的 HP（healthPoint）
  * HP 初始值为 1000，每次攻击（fight）会降低 100。
  * 
- * 满足以下两个条件就可以通过 Automation 补充为 1000：
+ * 同时满足以下两个条件，角色就可以通过 Automation 补充为 1000：
  * 1. 如果生命值不足 1000
- * 2. 经过一个时间间隔 interval
+ * 2. 经过某个时间间隔 interval
  * 请完成以下代码，实现上述逻辑 
  * 
  * 参考视频教程：https://www.bilibili.com/video/BV1ed4y1N7Uv?p=9
  * 
  * 任务 3 完成标志：
  * 1. 通过命令 "yarn hardhat test" 使得单元测试 11-12 通过
- * 2. 通过 Remix 在 goerli 测试网部署，并且测试执行是否如预期
+ * 2. 通过 Remix 在 Ethereum Sepolia 测试网部署，并且测试执行是否如预期
  */
 
 contract AutomationTask is AutomationCompatible {
@@ -40,6 +40,7 @@ contract AutomationTask is AutomationCompatible {
     /*
      * 步骤 2 - 定义 fight 函数
      * 使得用户可以通过 fight 函数改变数组中的生命值
+     * fight 函数接收一个参数 fighter，代表数组中的下标
      */
     function fight(uint256 fighter) public {
         //在此添加 solidity 代码

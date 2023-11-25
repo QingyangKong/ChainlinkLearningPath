@@ -1,7 +1,8 @@
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
 import "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol";
-import "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol";
+import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBaseV2.sol";
 
 /*
  * 任务 2：
@@ -12,7 +13,7 @@ import "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol";
  * 
  * 任务 2 完成标志：
  * 1. 通过命令 "yarn hardhat test" 使得单元测试 8-10 通过
- * 2. 通过 Remix 在 goerli 测试网部署，并且测试执行是否如预期
+ * 2. 通过 Remix 在 Ethereum Sepolia 测试网部署，并且测试执行是否如预期
 */
 
 

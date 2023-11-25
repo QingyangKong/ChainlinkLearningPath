@@ -1,6 +1,5 @@
-const { ethers } = require("hardhat");
-const { loadFixture } = require("@nomicfoundation/hardhat-network-helpers");
-const { assert, expect } = require("chai");
+const { loadFixture } = require("@nomicfoundation/hardhat-toolbox/network-helpers");
+const { expect } = require("chai");
 
 describe("单元测试：Chainlink VRF", async ()=> {
 
@@ -17,16 +16,23 @@ describe("单元测试：Chainlink VRF", async ()=> {
                 BASE_FEE,
                 GAS_PRICE_LINK
             );
+        await VRFCoordinator.waitForDeployment();
 
-        const tx = await VRFCoordinator.createSubscription();
-        const txReceipt = await tx.wait(1);
-        const subscriptionId = ethers.BigNumber.from(txReceipt.events[0].topics[1]);
+        const txResponse = await VRFCoordinator.createSubscription();
+        await txResponse.wait(1);
+
+        const txResponse_1 = await VRFCoordinator.createSubscription();
+        await txResponse_1.wait(1);
+
+        const subCreationEventName = VRFCoordinator.filters.SubscriptionCreated;
+        const events = await VRFCoordinator.queryFilter(subCreationEventName);
+        const subscriptionId = events[0].topics[1];
 
         const fundAmount = "1000000000000000000";
         await VRFCoordinator.fundSubscription(subscriptionId, fundAmount);
 
         const keyHash = "0xd89b2bf150e3b9e13446986e571fb9cab24b13cea0a43ea20a6049a85cc807cc";
-        const vrfCoordinatorAddr = VRFCoordinator.address;
+        const vrfCoordinatorAddr = VRFCoordinator.target;
 
         const VRFConsumerContract = await ethers.getContractFactory("VRFTask");
 
@@ -38,7 +44,7 @@ describe("单元测试：Chainlink VRF", async ()=> {
                 keyHash
             );
         
-        const VRFConsumerAddr = VRFConsumer.address;
+        const VRFConsumerAddr = VRFConsumer.target;
         await VRFCoordinator.addConsumer(subscriptionId, VRFConsumerAddr);
 
         return { VRFConsumer, VRFCoordinator };
@@ -62,7 +68,7 @@ describe("单元测试：Chainlink VRF", async ()=> {
         await expect(
             VRFCoordinator.fulfillRandomWords(
                 requestId,
-                VRFConsumer.address
+                VRFConsumer.target
             )
         ).to.emit(VRFConsumer, "ReturnedRandomness")
 
@@ -72,11 +78,11 @@ describe("单元测试：Chainlink VRF", async ()=> {
         const rand3 = await VRFConsumer.s_randomWords(3);
         const rand4 = await VRFConsumer.s_randomWords(4);
 
-        assert(rand0.gt(ethers.constants.Zero), "1st random number is not greater than 0");
-        assert(rand1.gt(ethers.constants.Zero), "2nd random number is not greater than 0");
-        assert(rand2.gt(ethers.constants.Zero), "3rd random number is not greater than 0");
-        assert(rand3.gt(ethers.constants.Zero), "4th random number is not greater than 0");
-        assert(rand4.gt(ethers.constants.Zero), "5th random number is not greater than 0");
+        expect(rand0).to.be.above(0, "1st random number is not greater than 0");
+        expect(rand1).to.be.above(0, "1st random number is not greater than 0");
+        expect(rand2).to.be.above(0, "1st random number is not greater than 0");
+        expect(rand3).to.be.above(0, "1st random number is not greater than 0");
+        expect(rand4).to.be.above(0, "1st random number is not greater than 0");
     });
 
     it("单元测试 1-2: 成功得到 5 个不重复的随机数", async function() {
@@ -84,7 +90,7 @@ describe("单元测试：Chainlink VRF", async ()=> {
         await VRFConsumer.requestRandomWords();
         const requestId = await VRFConsumer.s_requestId();
 
-        await VRFCoordinator.fulfillRandomWords(requestId, VRFConsumer.address);
+        await VRFCoordinator.fulfillRandomWords(requestId, VRFConsumer.target);
         
         const rand0 = await VRFConsumer.s_randomWords(0);
         const rand1 = await VRFConsumer.s_randomWords(1);
@@ -101,6 +107,6 @@ describe("单元测试：Chainlink VRF", async ()=> {
         ]
 
         const set = new Set(arr);
-        assert(set.size == 5, "there is duplicates in your random numbers");
+        expect(set).to.have.lengthOf(5, "there is duplicates in your random numbers");
     });
 });

@@ -1,11 +1,11 @@
-/** @type import('hardhat/config').HardhatUserConfig */
-require("ethers");
-require("@nomiclabs/hardhat-ethers");
-require("@nomiclabs/hardhat-waffle");
+require("@nomicfoundation/hardhat-toolbox");
 
 module.exports = {
   solidity: {
     compilers: [
+      {
+        version: "0.8.19",
+      },
       {
         version: "0.8.17",
       },
